@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class fibonacci {
+In this problem we are asked to display fibonacci values for nth number of fibonacci,we will create a function such that if user inputs 1 or 2 it will display 1,if 
+anything otherthan 1 or 2 is inputted ,finonacci values of previous two terms are added.
+		 public static void main(String[] args) {
+       we will be creating a variable n for user input,
+		  int n;
+
+		  Scanner s = new Scanner(System.in);
+		  n = s.nextInt();
+
+        creating a int variable to display nth value of fibonacci,
+		  int nthNumber = fibonacci(n);
+		  System.out.println(nthNumber);
+		 }
+            if user input is 1 or 2,it displays 1 as fib(1)=fib(2)=1, 
+		 private static int fibonacci(int number) {
+		  if (number == 1 || number == 2) {
+		   return 1;
+		  }
+        if user inputs something other than one or two,the below will take place,eg: f(3)=f(3-1)+f(3-2)=f(2)+f(1)=1+1=2
+		  return fibonacci(number - 1) + fibonacci(number - 2);
+		 }
+		}

@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class problem1 {
+       in this problem,we are asked to check divisiblity by three,but without using % / operator method,
+    as first step we will be adding up each digit of the entered integer,for this we will divide the integer everytime by 10,and add up the remainders by forming a loop,
+    the sum of all the remainders will give the sum of each digit in that integer. 
+   public static void main(String[] args) {
+	   Scanner scan=new Scanner(System.in);
+  Declaring variables sum and reminder and initiating them to 0,
+	   int sum=0;
+	   int rem=0;
+    taking input number from user,
+	   int n=scan.nextInt();
+       till the entered number is greater than 0,the loop runs, 
+	     while(n>0) {
+               getting reminder of the entered number by diving with 10,
+	    	 rem=n%10;
+               adding the reminder obtained, to sum which was already initialised to 0,sum gets added up every cycle of loop,and when n=0 the loop ends and the sum value is finalised.
+	    	 sum=rem+sum;
+               dividing the entered number by 10,and taking its value as a integer,this integer is again sent into loop if its greater than 0,
+	    	 n=n/10;
+	     }
+            till final value of sum is greater than 0,we substract 3 repeatedly,
+	       while(sum>0) {
+	    	   sum-=3;
+	       }
+            if sum gets to zero,it will be divisible by three, if not it will not be divisible,
+	       if(sum==0) {
+	    	   System.out.println("Yes");
+	       } else {
+	    	   System.out.println("No");
+	       }
+   }
+}
+
+}
